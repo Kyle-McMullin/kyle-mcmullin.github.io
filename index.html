@@ -4,31 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYRELM5B9G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZYRELM5B9G');
-</script>
-
-<meta name="google-adsense-account" content="ca-pub-4300007552370125">
-    
 </head>
 <body>
     <header>
         <h1>Kyle McMullin</h1>
         <nav>
             <ul>
-                <li><a href="index.html" class="button">Home</a></li>
-                <li><a href="about.html" class="button">About</a></li>
-                <li><a href="contact.html" class="button">Contact</a></li>
+                <li><a href="index" class="button">Home</a></li>
+                <li><a href="about" class="button">About</a></li>
+                <li><a href="contact" class="button">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -43,7 +29,20 @@
         <p>&copy; <span id="year"></span> Kyle McMullin</p>
     </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const yearSpan = document.getElementById('year');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+
+            // Intercept link clicks
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = link.getAttribute('href') + '.html';
+                    window.location.href = url;
+                });
+            });
+        });
     </script>
 </body>
 </html>
