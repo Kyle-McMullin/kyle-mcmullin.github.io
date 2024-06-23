@@ -6,23 +6,42 @@
     <title>404 - Page Not Found</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered-content {
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container a.button {
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>404 - Page Not Found</h1>
-        <nav>
-            <ul>
-                <li><a href="/" class="button">Home</a></li>
-                <li><a href="/about" class="button">About</a></li>
-                <li><a href="/contact" class="button">Contact</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
         <section class="centered-content">
             <h2>Oops! Page not found.</h2>
             <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-            <p>Please check your URL or go back to the <a href="/" class="button">Home Page</a>.</p>
+            <p>Please check your URL or go back to the <span class="button-container"><a href="/" class="button">Home Page</a></span>.</p>
         </section>
     </main>
     <footer>
@@ -33,47 +52,6 @@
             const yearSpan = document.getElementById('year');
             const currentYear = new Date().getFullYear();
             yearSpan.textContent = currentYear;
-
-            // Intercept link clicks
-            document.querySelectorAll('nav ul li a').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const path = link.getAttribute('href');
-                    history.pushState({}, '', path);
-                    loadContent(path);
-                });
-            });
-
-            // Load the initial content
-            loadContent(window.location.pathname);
-        });
-
-        function loadContent(path) {
-            let page;
-            switch (path) {
-                case '/':
-                    page = 'index.html';
-                    break;
-                case '/about':
-                    page = 'about.html';
-                    break;
-                case '/contact':
-                    page = 'contact.html';
-                    break;
-                default:
-                    page = '404.html';
-                    break;
-            }
-
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
-                });
-        }
-
-        window.addEventListener('popstate', () => {
-            loadContent(window.location.pathname);
         });
     </script>
 </body>
