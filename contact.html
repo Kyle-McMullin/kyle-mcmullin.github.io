@@ -12,9 +12,9 @@
         <h1>Contact</h1>
         <nav>
             <ul>
-                <li><a href="index" class="button">Home</a></li>
-                <li><a href="about" class="button">About</a></li>
-                <li><a href="contact" class="button">Contact</a></li>
+                <li><a href="/index" class="button">Home</a></li>
+                <li><a href="/about" class="button">About</a></li>
+                <li><a href="/contact" class="button">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -41,10 +41,43 @@
             document.querySelectorAll('nav ul li a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const url = link.getAttribute('href') + '.html';
-                    window.location.href = url;
+                    const path = link.getAttribute('href');
+                    history.pushState({}, '', path);
+                    loadContent(path);
                 });
             });
+
+            // Load the initial content
+            loadContent(window.location.pathname);
+        });
+
+        function loadContent(path) {
+            let page;
+            switch (path) {
+                case '/':
+                case '/index':
+                    page = 'index.html';
+                    break;
+                case '/about':
+                    page = 'about.html';
+                    break;
+                case '/contact':
+                    page = 'contact.html';
+                    break;
+                default:
+                    page = '404.html';
+                    break;
+            }
+
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
+                });
+        }
+
+        window.addEventListener('popstate', () => {
+            loadContent(window.location.pathname);
         });
     </script>
 </body>
