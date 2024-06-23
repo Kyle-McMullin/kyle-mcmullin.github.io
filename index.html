@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Kyle McMullin</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="button">Home</a></li>
+                <li><a href="about.html" class="button">About</a></li>
+                <li><a href="contact.html" class="button">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="centered-content">
+            <img src="me.jpg" alt="Kyle McMullin" class="profile-pic">
+            <h2>Welcome</h2>
+            <p>Explore my about page to learn a little more about my professional journey, skills, and interests. Feel free to get in touch if you'd like to connect!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Kyle McMullin</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
