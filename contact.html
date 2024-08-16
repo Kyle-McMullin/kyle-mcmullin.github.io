@@ -6,6 +6,28 @@
     <title>Contact</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+	<script src="force-https.js" defer></script>
+	
+	
+		    <style>
+        /* Styles for the "Contact Me" section */
+        .contactme-section {
+            background: rgba(0, 0, 0, 1); /* Light transparent background color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Space inside the section */
+            margin: 20px; /* Space outside the section */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow to make the section stand out */
+        }
+
+        /* Additional styles to make the section content more readable */
+        .contactme-section p {
+            color: #fff; /* Text color */
+            line-height: 1.6; /* Line height for readability */
+        }
+    </style>
+	
+	
+	
 </head>
 <body>
     <header>
@@ -19,7 +41,7 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section class="contactme-section">
             <h2>Contact Me</h2>
             <p><strong>Name:</strong> Kyle McMullin</p>
             <p><strong>Location:</strong> Los Angeles (willing to relocate)</p>
@@ -30,6 +52,10 @@
     <footer>
         <p>&copy; <span id="year"></span> Kyle McMullin</p>
     </footer>
+	
+	<!-- Canvas for particles background -->
+	<canvas id="particlesCanvas"></canvas>
+	
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const yearSpan = document.getElementById('year');
