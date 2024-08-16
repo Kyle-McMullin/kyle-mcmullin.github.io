@@ -1,3 +1,22 @@
+/* Ensure the canvas covers the entire viewport */
+#particlesCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Ensure it is behind all other content */
+    pointer-events: none; /* Allow interactions with content on top of the canvas */
+}
+
+/* Add other necessary styles to ensure content appears above the canvas */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
 body {
     background-color: #121212;
     color: #e0e0e0;
