@@ -11,28 +11,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const currentYear = new Date().getFullYear();
         yearSpan.textContent = currentYear;
     }
-
-	    
-
-	    
- /* Styles for the "My Journey" section */
-        .journey-section {
-            background: rgba(0, 0, 0, 0.7); /* Light transparent background color */
-            border-radius: 10px; /* Rounded corners */
-            padding: 20px; /* Space inside the section */
-            margin: 20px; /* Space outside the section */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow to make the section stand out */
-        }
-
-        /* Additional styles to make the section content more readable */
-        .journey-section p {
-            color: #fff; /* Text color */
-            line-height: 1.6; /* Line height for readability */
-        }
-
-
-
-	
 	    // Particle animation code
     const canvas = document.getElementById('particlesCanvas');
     const ctx = canvas.getContext('2d');
