@@ -12,50 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         yearSpan.textContent = currentYear;
     }
 
-
-
-	
-
-function loadContent(path) {
-    let page;
-    switch (path) {
-        case '/':
-            page = 'index.html';
-            break;
-        case '/about':
-            page = 'about.html';
-            break;
-        case '/contact':
-            page = 'contact.html';
-            break;
-        default:
-            page = '404.html';
-            break;
-    }
-
-    fetch(page)
-        .then(response => response.text())
-        .then(html => {
-            document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
-            applyStyles(); // Apply styles to the newly loaded content
-        });
-}
-
-function applyStyles() {
-    const journeySection = document.querySelector('.journey-section');
-    if (journeySection) {
-        journeySection.style.background = 'rgba(0, 0, 0, 0.7)';
-        journeySection.style.borderRadius = '10px';
-        journeySection.style.padding = '20px';
-        journeySection.style.margin = '20px';
-        journeySection.style.boxShadow = '0 0 15px rgba(0, 0, 0, 0.3)';
-    }
-}
-
-
-
-	
-
+	    
 
 	    
  /* Styles for the "My Journey" section */
