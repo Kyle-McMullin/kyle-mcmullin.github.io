@@ -68,7 +68,7 @@ function loadContent(path) {
 			
 			
 			 // Update header
-            document.querySelector('header h1').textContent = headerText;
+            document.querySelector('h1').textContent = headerText;
         });
 }
 
