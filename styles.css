@@ -136,7 +136,7 @@ nav ul li a {
   font-weight: 400;
   letter-spacing: 1px;
   text-decoration: none;
-  transition: 0.5s;
+  transition: 0.2s;
   overflow: hidden;
   backdrop-filter: blur(15px);
 }
@@ -154,8 +154,8 @@ nav ul li a {
   height: 100%;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.149), transparent);
   transform: skewX(45deg);
-  transition: 0.5s;
-  transition-delay: 0.5s;
+  transition: 0.2s;
+  transition-delay: 0.2s;
 }
 
 a:hover::before {
@@ -173,7 +173,7 @@ a:hover::before {
   width: 30px;
   height: 10px;
   border-radius: 10px;
-  transition: 0.5s;
+  transition: 0.2s;
   transition-delay: 0s;
 }
 
@@ -182,7 +182,7 @@ a:hover::before {
   height: 50%;
   width: 80%;
   border-radius: 30px;
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
 
 .btn:after {
@@ -195,7 +195,7 @@ a:hover::before {
   width: 30px;
   height: 10px;
   border-radius: 10px;
-  transition: 0.5s;
+  transition: 0.2s;
   transition-delay: 0s;
 }
 
@@ -204,7 +204,7 @@ a:hover::before {
   height: 50%;
   width: 80%;
   border-radius: 30px;
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
 }
 
 .btn:nth-child(1):before,
