@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <script src="force-https.js" defer></script>	
+	<link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
     <header>
@@ -57,29 +58,44 @@
             loadContent(window.location.pathname);
         });
 
-        function loadContent(path) {
-            let page;
-            switch (path) {
-                case '/':
-                    page = 'index.html';
-                    break;
-                case '/about':
-                    page = 'about.html';
-                    break;
-                case '/contact':
-                    page = 'contact.html';
-                    break;
-                default:
-                    page = '404.html';
-                    break;
-            }
+    function loadContent(path) {
+		let page;
+		let title;
+		let headerText;
+		switch (path) {
+        case '/':
+            page = 'index.html';
+            title = 'Kyle McMullin';
+            headerText = 'Home';
+            break;
+        case '/about':
+            page = 'about.html';
+            title = 'About Me - Kyle McMullin';
+            headerText = 'About Me';
+            break;
+        case '/contact':
+            page = 'contact.html';
+            title = 'Contact - Kyle McMullin';
+            headerText = 'Contact';
+            break;
+        default:
+            page = '404.html';
+            title = '404 Not Found - Kyle McMullin';
+            headerText = '404 Not Found';
+            break;
+    }
 
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
-                });
-        }
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
+            document.title = title;
+			
+			
+			 // Update header
+            document.querySelector('h1').textContent = headerText;
+        });
+    }
 
         window.addEventListener('popstate', () => {
             loadContent(window.location.pathname);

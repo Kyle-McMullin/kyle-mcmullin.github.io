@@ -36,11 +36,10 @@ function loadContent(path) {
     let page;
     let title;
     let headerText;
-
     switch (path) {
         case '/':
             page = 'index.html';
-            title = 'Home - Kyle McMullin';
+            title = 'Kyle McMullin';
             headerText = 'Home';
             break;
         case '/about':
