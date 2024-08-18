@@ -55,6 +55,52 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Styles for the "Contact Me" section */
+.contactme-section {
+    background: rgba(0, 0, 0, 0.7); /* Light transparent background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the section */
+    margin: 20px; /* Space outside the section */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow to make the section stand out */
+}
+
+/* Additional styles to make the section content more readable */
+.contactme-section p {
+    color: #fff; /* Text color */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Optional: Style for the section header */
+.contactme-section h2 {
+    color: #fff; /* Header text color */
+    margin-bottom: 15px; /* Space below the header */
+    font-size: 24px; /* Font size */
+}
+
+
+/* Styles for the "About Me" section */
+.journey-section {
+    background: rgba(0, 0, 0, 0.7); /* Light transparent background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Space inside the section */
+    margin: 20px; /* Space outside the section */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow to make the section stand out */
+}
+
+/* Additional styles to make the section content more readable */
+.journey-section p {
+    color: #fff; /* Text color */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Optional: Style for the section header */
+.journey-section h2 {
+    color: #fff; /* Header text color */
+    margin-bottom: 15px; /* Space below the header */
+    font-size: 24px; /* Font size */
+}
+
+
 
 .btn-container {
     display: flex; /* Enable Flexbox */
