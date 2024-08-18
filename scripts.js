@@ -30,6 +30,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
         mouse.y = event.y;
     });
 
+
+	
+function loadContent(path) {
+    let page;
+    let title;
+    switch (path) {
+        case '/':
+            page = 'index.html';
+            title = 'Home - Kyle McMullin';
+            break;
+        case '/about':
+            page = 'about.html';
+            title = 'About Me - Kyle McMullin';
+            break;
+        case '/contact':
+            page = 'contact.html';
+            title = 'Contact - Kyle McMullin';
+            break;
+        default:
+            page = '404.html';
+            title = '404 Not Found - Kyle McMullin';
+            break;
+    }
+
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
+            document.title = title;
+        });
+}
+
+
+
+	
     class Particle {
         constructor(x, y, directionX, directionY, size, color) {
             this.x = x;
