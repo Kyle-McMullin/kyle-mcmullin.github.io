@@ -35,22 +35,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function loadContent(path) {
     let page;
     let title;
+    let headerText;
+
     switch (path) {
         case '/':
             page = 'index.html';
             title = 'Home - Kyle McMullin';
+            headerText = 'Home';
             break;
         case '/about':
             page = 'about.html';
             title = 'About Me - Kyle McMullin';
+            headerText = 'About Me';
             break;
         case '/contact':
             page = 'contact.html';
             title = 'Contact - Kyle McMullin';
+            headerText = 'Contact';
             break;
         default:
             page = '404.html';
             title = '404 Not Found - Kyle McMullin';
+            headerText = '404 Not Found';
             break;
     }
 
@@ -59,6 +65,10 @@ function loadContent(path) {
         .then(html => {
             document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
             document.title = title;
+			
+			
+			 // Update header
+            document.querySelector('header h1').textContent = headerText;
         });
 }
 
@@ -179,7 +189,7 @@ class Particle {
         };
     }
 
-    const throttledAnimate = throttleAnimation(animate, 1000 / 30);  // Limit to 30 FPS
+    const throttledAnimate = throttleAnimation(animate, 1000 / 60);  // Limit to 60 FPS
 
     window.addEventListener('resize', function() {
         canvas.width = innerWidth;
