@@ -65,56 +65,57 @@ function loadContent(path) {
 
 
 	
-    class Particle {
-        constructor(x, y, directionX, directionY, size, color) {
-            this.x = x;
-            this.y = y;
-            this.directionX = directionX;
-            this.directionY = directionY;
-            this.size = size;
-            this.color = color;
-        }
-
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-        }
-
-        update() {
-            if (this.x > canvas.width || this.x < 0) {
-                this.directionX = -this.directionX;
-            }
-
-            if (this.y > canvas.height || this.y < 0) {
-                this.directionY = -this.directionY;
-            }
-
-            const dx = mouse.x - this.x;
-            const dy = mouse.y - this.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < mouse.radius + this.size) {
-                if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
-                    this.x += 10;
-                }
-                if (mouse.x > this.x && this.x > this.size * 10) {
-                    this.x -= 10;
-                }
-                if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
-                    this.y += 10;
-                }
-                if (mouse.y > this.y && this.y > this.size * 10) {
-                    this.y -= 10;
-                }
-            }
-
-            this.x += this.directionX;
-            this.y += this.directionY;
-            this.draw();
-        }
+class Particle {
+    constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
     }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+
+    update() {
+        // Bounce off edges
+        if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+            this.directionX = -this.directionX;
+        }
+
+        if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+            this.directionY = -this.directionY;
+        }
+
+        // Check distance from mouse
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < mouse.radius + this.size) {
+            // Gradual push away from mouse
+            const force = (mouse.radius - distance) / mouse.radius;
+            const pushX = dx / distance * force * 5; // Increase multiplier for stronger push
+            const pushY = dy / distance * force * 5;
+
+            this.x -= pushX;
+            this.y -= pushY;
+        }
+
+        // Update position
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.draw();
+    }
+}
+
+
+
 
     function init() {
         particlesArray.length = 0;
