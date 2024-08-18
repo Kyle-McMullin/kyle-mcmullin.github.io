@@ -80,6 +80,10 @@
                 .then(response => response.text())
                 .then(html => {
                     document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
+					document.title = title;
+					
+				// Update header
+				document.querySelector('h1').textContent = headerText;
                 });
         }
 
