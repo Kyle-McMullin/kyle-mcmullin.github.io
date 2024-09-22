@@ -48,11 +48,37 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 10px;
+    position: relative; /* Needed for dropdown positioning */
 }
 
 nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
+}
+
+/* Dropdown styles */
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Positioning */
+    background-color: #1f1f1f; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for dropdown items */
+    z-index: 10; /* Ensure dropdown is above other content */
+}
+
+nav ul li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown a {
+    display: block; /* Make each item a block */
+    padding: 5px 10px; /* Padding for dropdown items */
+    color: #e0e0e0; /* Text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
 }
 
 /* Styles for the "Contact Me" section */
@@ -77,7 +103,6 @@ nav ul li a {
     font-size: 24px; /* Font size */
 }
 
-
 /* Styles for the "About Me" section */
 .journey-section {
     background: rgba(0, 0, 0, 0.7); /* Light transparent background color */
@@ -99,8 +124,6 @@ nav ul li a {
     margin-bottom: 15px; /* Space below the header */
     font-size: 24px; /* Font size */
 }
-
-
 
 .btn-container {
     display: flex; /* Enable Flexbox */
@@ -227,74 +250,6 @@ a:hover::before {
   box-shadow: 0 0 5px var(--clr), 0 0 15px var(--clr), 0 0 30px var(--clr),
     0 0 60px var(--clr);
 }
-
-
-/* Basic mobile styles */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #2dd9fe;
-}
-
-/* Hide navigation on mobile */
-#mainNav {
-    display: block;
-}
-
-/* Styles for mobile screens (up to 768px wide) */
-@media (max-width: 768px) {
-    /* Hide the nav by default on mobile */
-    #mainNav {
-        display: none;
-    }
-
-    /* Display the menu icon */
-    .menu-icon {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-
-    /* When menu is open, show the nav */
-    #mainNav.active {
-        display: block;
-        position: absolute;
-        top: 50px;
-        right: 0;
-        background-color: #333;
-        width: 100%;
-    }
-
-    /* Ensure nav links are full width and look like a dropdown */
-    #mainNav ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    #mainNav ul li {
-        text-align: center;
-        padding: 15px 0;
-        background-color: #2dd9fe;
-        border-bottom: 1px solid #fff;
-    }
-
-    #mainNav ul li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .btn-container .btn {
-        width: 100%; /* Make the buttons full width on mobile */
-    }
-}
-
-
-
-
 
 main {
     display: flex;
