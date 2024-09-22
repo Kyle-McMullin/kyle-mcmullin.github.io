@@ -80,22 +80,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
 
     function toggleMenu() {
-        mobileMenu.classList.toggle('show'); // Toggle visibility of mobile menu
+        mobileMenu.classList.toggle('show'); // Toggle the menu visibility
     }
 
     function closeMenu(event) {
-        // Close the menu if the click is outside of the hamburger or the menu
+        // Check if click is outside the menu and hamburger
         if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
             mobileMenu.classList.remove('show'); // Close the menu
         }
     }
 
-    // Attach the toggleMenu function to the hamburger menu
-    if (hamburger) {
-        hamburger.addEventListener('click', toggleMenu);
-    }
-
-    // Attach closeMenu function to document clicks
+    // Attach event listeners
+    hamburger.addEventListener('click', toggleMenu);
     document.addEventListener('click', closeMenu);
 });
 
