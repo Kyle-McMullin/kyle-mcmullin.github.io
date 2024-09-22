@@ -76,16 +76,27 @@ function loadContent(path) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+
     function toggleMenu() {
-        const mobileMenu = document.querySelector('.mobile-menu');
         mobileMenu.classList.toggle('show'); // Toggle visibility of mobile menu
     }
 
+    function closeMenu(event) {
+        // Close the menu if the click is outside of the hamburger or the menu
+        if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+            mobileMenu.classList.remove('show'); // Close the menu
+        }
+    }
+
     // Attach the toggleMenu function to the hamburger menu
-    const hamburger = document.querySelector('.hamburger');
     if (hamburger) {
         hamburger.addEventListener('click', toggleMenu);
     }
+
+    // Attach closeMenu function to document clicks
+    document.addEventListener('click', closeMenu);
 });
 
 
