@@ -323,19 +323,19 @@ a:hover {
 		transition: all 0.3s; /* Smooth transition for visibility */
 	}
 
-	/* Change the lines when the menu is open */
-	.hamburger.active .line:nth-child(1) {
-		transform: rotate(45deg) translate(5px, 5px); /* First line rotates */
+	/* Change hamburger lines to indicate active state */
+	.hamburger.active .line {
+		background: red; /* Change color when active */
 	}
 
-	.hamburger.active .line:nth-child(2) {
-		opacity: 0; /* Middle line disappears */
+	/* Mobile menu styles */
+	.mobile-menu {
+		display: none; /* Initially hidden */
 	}
 
-	.hamburger.active .line:nth-child(3) {
-		transform: rotate(-45deg) translate(5px, -5px); /* Last line rotates */
+	.mobile-menu.show {
+		display: block; /* Show when active */
 	}
-
 
 
     /* Dropdown menu styles */
