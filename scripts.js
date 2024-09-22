@@ -80,6 +80,12 @@ hamburger.addEventListener('click', () => {
 });
     }
 
+function toggleMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu.classList.toggle('show'); // Toggle the "show" class
+}
+
+
 	
 class Particle {
     constructor(x, y, directionX, directionY, size, color) {
