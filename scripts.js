@@ -77,18 +77,12 @@ function loadContent(path) {
 
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
-
-    // Change display property based on visibility
-    if (menu.classList.contains('show')) {
-        menu.style.display = 'block';
-    } else {
-        menu.style.display = 'none';
-    }
+    menu.classList.toggle('show'); // Toggle the 'show' class
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Ensure the toggle function is available after the DOM is loaded
+    // This is just to confirm the script is loaded
+    console.log("DOM fully loaded and parsed");
 });
 
 
