@@ -73,25 +73,6 @@ function loadContent(path) {
 
 
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-
-    function toggleMenu() {
-        menu.classList.toggle('show'); // Toggle the menu visibility
-        hamburger.classList.toggle('active'); // Toggle the active state for hamburger
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-});
-
-
-
-
-
-
 	
 class Particle {
     constructor(x, y, directionX, directionY, size, color) {
