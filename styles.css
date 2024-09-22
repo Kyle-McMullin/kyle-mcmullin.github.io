@@ -295,21 +295,28 @@ a:hover {
     }
 }
 
-/* Hide the original menu and buttons on desktop */
+
+
+
+/* Hide the button container on desktop */
 @media (min-width: 768px) {
     .btn-container {
-        display: none;
+        display: none; /* Hide buttons on desktop */
     }
 
     .hamburger {
-        display: none; /* Hide the hamburger menu icon on desktop */
+        display: none; /* Hide the hamburger icon on desktop */
     }
 }
 
-/* Show the hamburger menu icon on mobile */
+/* Show the hamburger icon and hide buttons on mobile */
 @media (max-width: 767px) {
+    .btn-container {
+        display: none; /* Ensure buttons are hidden on mobile */
+    }
+
     .hamburger {
-        display: block;
+        display: block; /* Show the hamburger menu icon on mobile */
         cursor: pointer;
         width: 30px;
         height: 20px;
@@ -323,15 +330,20 @@ a:hover {
         margin: 4px 0;
     }
 
-    /* Dropdown menu styles */
+    /* Mobile dropdown styles */
     .mobile-menu {
-        display: none;
+        display: none; /* Initially hidden */
     }
 
     .mobile-menu.show {
         display: block; /* Show dropdown when toggled */
     }
 }
+
+
+
+
+
 
 @keyframes bounceIn {
     0%,

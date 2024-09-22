@@ -72,11 +72,11 @@ function loadContent(path) {
 }
 
     // Handle dropdown selection for mobile
- const hamburgerMenu = document.getElementById('hamburgerMenu');
-const mobileMenu = document.getElementById('mobileMenu');
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-hamburgerMenu.addEventListener('click', function() {
-    mobileMenu.classList.toggle('show');
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show'); // Toggle the visibility of the mobile menu
 });
     }
 
