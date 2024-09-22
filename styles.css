@@ -322,7 +322,7 @@ a:hover {
     }
 
     /* Dropdown menu styles */
-    .mobileMenu {
+    .mobile-menu {
         display: none;
 		flex-direction: column; /* Stack options vertically */
 		background-color: #1f1f1f; /* Background color */
@@ -333,18 +333,18 @@ a:hover {
 		z-index: 10; /* Make sure it appears above other content */
     }
 
-    .mobileMenu.show {
+    .mobile-menu.show {
         display: flex !important;; /* Show dropdown when toggled */
     }
 	
-	.mobileMenu a {
+	.mobile-menu a {
 		padding: 10px; /* Add padding for clickable area */
 		color: #e0e0e0; /* Link color */
 		text-decoration: none; /* Remove underline */
 		transition: background 0.3s; /* Smooth background transition */
 	}
 
-	.mobileMenu a:hover {
+	.mobile-menu a:hover {
 		background: rgba(255, 255, 255, 0.1); /* Highlight on hover */
 	}
 	

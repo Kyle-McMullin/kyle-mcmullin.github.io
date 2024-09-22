@@ -77,12 +77,13 @@ function loadContent(path) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
 
     function toggleMenu() {
         menu.classList.toggle('show'); // Toggle the 'show' class
     }
 
-    document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', toggleMenu);
 });
 
 

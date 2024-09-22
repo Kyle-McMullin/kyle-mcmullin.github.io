@@ -17,7 +17,7 @@
 		
 		
 		
-		<div class="hamburger" onclick="toggleMenu()">
+		<div class="hamburger">
 			<div class="line"></div>
 			<div class="line"></div>
 			<div class="line"></div>
@@ -34,11 +34,13 @@
 		
 		
 		<!-- Mobile Menu -->
-		<div class="mobileMenu">
+		<nav class="mobile-menu" id="mobileMenu">
+		    <ul>
 				<a href="/">Home</a>
 				<a href="/about">About</a>
 				<a href="/contact">Contact</a>
-		</div>
+			</ul>
+		</nav>
 		
 		
         </nav>
@@ -128,12 +130,13 @@
 	<script>
 document.addEventListener('DOMContentLoaded', function() {
     const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
 
     function toggleMenu() {
         menu.classList.toggle('show'); // Toggle the 'show' class
     }
 
-    document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', toggleMenu);
 });
 </script>
 	
