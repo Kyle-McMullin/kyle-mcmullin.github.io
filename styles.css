@@ -297,7 +297,7 @@ a:hover {
 
 /* Hide the original menu and buttons on desktop */
 @media (min-width: 768px) {
-    .top-menu {
+    .btn-container {
         display: none;
     }
 
