@@ -131,14 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
 
     hamburger.addEventListener('click', function() {
-        mobileMenu.classList.toggle('show'); // Toggle menu visibility
-    });
-
-    // Close menu if clicked outside
-    document.addEventListener('click', function(event) {
-        if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.classList.remove('show'); // Close menu
-        }
+        mobileMenu.classList.toggle('show'); // Toggle the menu visibility
     });
 });
 </script>
