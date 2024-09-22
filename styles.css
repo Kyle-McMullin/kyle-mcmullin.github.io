@@ -352,3 +352,16 @@ a:hover {
     width: 100%; /* Full width for dropdown buttons */
     margin: 5px 0; /* Margin between dropdown buttons */
 }
+
+/* Media query to only show dropdown button on mobile */
+@media (min-width: 768px) {
+    .dropdown-button {
+        display: none; /* Hide dropdown button on larger screens */
+    }
+
+    .mobile-dropdown {
+        display: flex; /* Display buttons normally on larger screens */
+        position: static; /* Reset position for normal flow */
+    }
+}
+
