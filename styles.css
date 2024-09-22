@@ -306,20 +306,37 @@ a:hover {
         display: none; /* Hides the button container on mobile */
     }
 
-    .hamburger {
-        display: block; /* Show hamburger icon on mobile */
-        cursor: pointer;
-        width: 30px;
-        height: 20px;
-    }
+	.hamburger {
+		display: block; /* Ensure it's always displayed on mobile */
+		cursor: pointer;
+		width: 30px;
+		height: 20px;
+		z-index: 100; /* Make sure it stays above other content */
+	}
 
-    .line {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #000; /* Change to your preferred color */
-        margin: 4px 0;
-    }
+	.line {
+		display: block;
+		width: 100%;
+		height: 3px;
+		background: #000; /* Change to your preferred color */
+		margin: 4px 0;
+		transition: all 0.3s; /* Smooth transition for visibility */
+	}
+
+	/* Change the lines when the menu is open */
+	.hamburger.active .line:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px); /* First line rotates */
+	}
+
+	.hamburger.active .line:nth-child(2) {
+		opacity: 0; /* Middle line disappears */
+	}
+
+	.hamburger.active .line:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -5px); /* Last line rotates */
+	}
+
+
 
     /* Dropdown menu styles */
     .mobile-menu {

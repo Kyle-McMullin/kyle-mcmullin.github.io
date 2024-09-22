@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
 
     function toggleMenu() {
-        menu.classList.toggle('show'); // Toggle the 'show' class
+        menu.classList.toggle('show'); // Toggle the menu visibility
+        hamburger.classList.toggle('active'); // Toggle the active state for hamburger
     }
 
     hamburger.addEventListener('click', toggleMenu);
