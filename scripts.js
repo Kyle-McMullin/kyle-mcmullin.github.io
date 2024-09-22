@@ -71,14 +71,6 @@ function loadContent(path) {
         });
 }
 
-    // Handle dropdown selection for mobile
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show'); // Toggle the visibility of the mobile menu
-});
-    }
 
 function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
