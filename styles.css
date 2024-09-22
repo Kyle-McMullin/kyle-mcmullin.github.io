@@ -48,37 +48,11 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 10px;
-    position: relative; /* Needed for dropdown positioning */
 }
 
 nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
-}
-
-/* Dropdown styles */
-.dropdown {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Positioning */
-    background-color: #1f1f1f; /* Background color */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px; /* Padding for dropdown items */
-    z-index: 10; /* Ensure dropdown is above other content */
-}
-
-nav ul li:hover .dropdown {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown a {
-    display: block; /* Make each item a block */
-    padding: 5px 10px; /* Padding for dropdown items */
-    color: #e0e0e0; /* Text color */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
 }
 
 /* Styles for the "Contact Me" section */
@@ -103,6 +77,7 @@ nav ul li:hover .dropdown {
     font-size: 24px; /* Font size */
 }
 
+
 /* Styles for the "About Me" section */
 .journey-section {
     background: rgba(0, 0, 0, 0.7); /* Light transparent background color */
@@ -124,6 +99,8 @@ nav ul li:hover .dropdown {
     margin-bottom: 15px; /* Space below the header */
     font-size: 24px; /* Font size */
 }
+
+
 
 .btn-container {
     display: flex; /* Enable Flexbox */
@@ -251,6 +228,13 @@ a:hover::before {
     0 0 60px var(--clr);
 }
 
+
+
+
+
+
+
+
 main {
     display: flex;
     justify-content: center;
@@ -341,3 +325,30 @@ a:hover {
     100% {
         opacity: 1;
         transform: scale3d(1
+
+
+
+/* Styles for mobile dropdown menu */
+.mobile-dropdown {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack buttons vertically */
+    position: absolute; /* Positioning */
+    background-color: #1f1f1f; /* Dropdown background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for dropdown items */
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.mobile-dropdown.show {
+    display: flex; /* Show dropdown when active */
+}
+
+.dropdown-button {
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Ensure buttons within the dropdown look good */
+.mobile-dropdown .btn {
+    width: 100%; /* Full width for dropdown buttons */
+    margin: 5px 0; /* Margin between dropdown buttons */
+}

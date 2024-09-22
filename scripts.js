@@ -28,14 +28,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     window.addEventListener('mousemove', function(event) {
         mouse.x = event.x;
         mouse.y = event.y;
-		
-		
-		    const menuToggle = document.getElementById('menuToggle');
-    const nav = document.getElementById('mainNav');
-
-    // Toggle the "active" class on the nav when the menu icon is clicked
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
     });
 
 

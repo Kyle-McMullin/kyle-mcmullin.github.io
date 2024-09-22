@@ -7,27 +7,21 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <script src="force-https.js" defer></script>	
-    <link rel="icon" href="favicon.png" type="image/png">
+	<link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
     <header>
         <h1>Kyle McMullin</h1>
         <nav>
         <ul>
-            <div class="btn-container">
+	    <div class="btn-container">
+		    <div class="dropdown-button" onclick="toggleDropdown()">Menu</div>
+			<div class="mobile-dropdown" id="mobileDropdown">
                 <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/">Home</a></div></li>
                 <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/about">About</a></div></li>
-                <li class="dropdown">
-                    <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="#">Services</a></div>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                        <li><a href="#">SEO Services</a></li>
-                    </ul>
-                </li>
                 <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/contact">Contact</a></div></li>
             </div>
-        </ul>
+	</ul>
         </nav>
     </header>
     <main>
@@ -41,8 +35,8 @@
         <p>&copy; <span id="year"></span> Kyle McMullin</p>
     </footer>
 	
-    <!-- Canvas for particles background -->
-    <canvas id="particlesCanvas"></canvas>
+	<!-- Canvas for particles background -->
+	<canvas id="particlesCanvas"></canvas>
 	
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -64,47 +58,57 @@
             loadContent(window.location.pathname);
         });
 
-        function loadContent(path) {
-            let page;
-            let title;
-            let headerText;
-            switch (path) {
-                case '/':
-                    page = 'index.html';
-                    title = 'Kyle McMullin';
-                    headerText = 'Home';
-                    break;
-                case '/about':
-                    page = 'about.html';
-                    title = 'About Me - Kyle McMullin';
-                    headerText = 'About Me';
-                    break;
-                case '/contact':
-                    page = 'contact.html';
-                    title = 'Contact - Kyle McMullin';
-                    headerText = 'Contact';
-                    break;
-                default:
-                    page = '404.html';
-                    title = '404 Not Found - Kyle McMullin';
-                    headerText = '404 Not Found';
-                    break;
-            }
+    function loadContent(path) {
+		let page;
+		let title;
+		let headerText;
+		switch (path) {
+        case '/':
+            page = 'index.html';
+            title = 'Kyle McMullin';
+            headerText = 'Home';
+            break;
+        case '/about':
+            page = 'about.html';
+            title = 'About Me - Kyle McMullin';
+            headerText = 'About Me';
+            break;
+        case '/contact':
+            page = 'contact.html';
+            title = 'Contact - Kyle McMullin';
+            headerText = 'Contact';
+            break;
+        default:
+            page = '404.html';
+            title = '404 Not Found - Kyle McMullin';
+            headerText = '404 Not Found';
+            break;
+    }
 
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
-                    document.title = title;
-					
-                    // Update header
-                    document.querySelector('h1').textContent = headerText;
-                });
-        }
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector('main').innerHTML = new DOMParser().parseFromString(html, 'text/html').querySelector('main').innerHTML;
+            document.title = title;
+			
+			
+			 // Update header
+            document.querySelector('h1').textContent = headerText;
+        });
+    }
 
         window.addEventListener('popstate', () => {
             loadContent(window.location.pathname);
         });
     </script>
+	
+	<script>
+function toggleDropdown() {
+    const dropdown = document.getElementById('mobileDropdown');
+    dropdown.classList.toggle('show');
+}
+	</script>
+	
+	
 </body>
 </html>
