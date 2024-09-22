@@ -15,8 +15,6 @@
         <nav>
         <ul>
 	    <div class="btn-container">
-		    <div class="dropdown-button" onclick="toggleDropdown()">Menu</div>
-			<div class="mobile-dropdown" id="mobileDropdown">
                 <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/">Home</a></div></li>
                 <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/about">About</a></div></li>
                 <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/contact">Contact</a></div></li>
@@ -101,16 +99,5 @@
             loadContent(window.location.pathname);
         });
     </script>
-	
-	
-	
-<script>
-function toggleDropdown() {
-    const dropdown = document.getElementById('mobileDropdown');
-    dropdown.classList.toggle('show');
-}
-</script>
-	
-	
 </body>
 </html>
