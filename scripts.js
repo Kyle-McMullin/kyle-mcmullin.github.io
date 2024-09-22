@@ -75,13 +75,20 @@ function loadContent(path) {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('show');
 
-    hamburger.addEventListener('click', function() {
-        mobileMenu.classList.toggle('show'); // Toggle the menu visibility
-    });
+    // Change display property based on visibility
+    if (menu.classList.contains('show')) {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure the toggle function is available after the DOM is loaded
 });
 
 
