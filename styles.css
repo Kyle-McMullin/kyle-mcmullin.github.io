@@ -301,20 +301,19 @@ a:hover {
 /* Hide the button container on desktop */
 @media (min-width: 768px) {
     .btn-container {
-        display: none; /* Hide buttons on desktop */
+        display: flex; /* Show buttons */
     }
 
     .hamburger {
-        display: none; /* Hide the hamburger icon on desktop */
-    }
-	
-	.mobile-menu {
-        display: none; /* Initially hidden */
+        display: none; /* Hide hamburger icon on desktop */
     }
 }
 
 /* Show the hamburger icon and hide buttons on mobile */
 @media (max-width: 767px) {
+    .btn-container {
+        display: none; /* Hide buttons on mobile */
+    }
 
     .hamburger {
         display: block; /* Show the hamburger menu icon on mobile */
