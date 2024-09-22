@@ -359,6 +359,10 @@ a:hover {
     .hamburger {
         display: none; /* Hide hamburger menu icon on desktop */
     }
+	
+	.mobile-menu {
+        display: none;
+	}
 }
 
 
