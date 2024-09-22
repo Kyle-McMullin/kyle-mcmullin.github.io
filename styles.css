@@ -351,8 +351,15 @@ a:hover {
     .btn-container > div:not(.dropdown-button) {
         display: none; /* Hide desktop buttons on mobile */
     }
-
+    
     .mobile-dropdown {
-        display: flex; /* Show dropdown when active */
+        display: flex; /* Show dropdown on mobile */
+    }
+}
+
+/* Ensure the dropdown is hidden on desktop */
+@media (min-width: 768px) {
+    .mobile-dropdown {
+        display: none; /* Hide dropdown on desktop */
     }
 }
