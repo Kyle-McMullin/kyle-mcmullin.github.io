@@ -298,7 +298,9 @@ a:hover {
 
 
 
-/* Hide the button container on desktop */
+
+
+/* Show buttons on desktop */
 @media (min-width: 768px) {
     .btn-container {
         display: flex; /* Show buttons */
@@ -309,14 +311,14 @@ a:hover {
     }
 }
 
-/* Show the hamburger icon and hide buttons on mobile */
+/* Hide buttons on mobile */
 @media (max-width: 767px) {
     .btn-container {
         display: none; /* Hide buttons on mobile */
     }
 
     .hamburger {
-        display: block; /* Show the hamburger menu icon on mobile */
+        display: block; /* Show hamburger icon on mobile */
         cursor: pointer;
         width: 30px;
         height: 20px;
@@ -339,6 +341,7 @@ a:hover {
         display: block; /* Show dropdown when toggled */
     }
 }
+
 
 
 
