@@ -71,7 +71,14 @@ function loadContent(path) {
         });
 }
 
-
+    // Handle dropdown selection for mobile
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.addEventListener('change', function() {
+            const path = this.value;
+            loadContent(path);
+        });
+    }
 
 	
 class Particle {

@@ -295,6 +295,32 @@ a:hover {
     }
 }
 
+/* Hide desktop menu on mobile */
+.desktop-menu {
+    display: flex;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Hide the desktop menu */
+    }
+
+    .mobile-menu {
+        display: block; /* Show the dropdown */
+        width: 100%; /* Full width */
+        margin-top: 10px; /* Space above */
+        padding: 10px; /* Padding for better click area */
+        background-color: #1f1f1f; /* Match header background */
+        color: #e0e0e0; /* Match text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+    }
+}
+
 @keyframes bounceIn {
     0%,
     20%,
@@ -325,41 +351,3 @@ a:hover {
     100% {
         opacity: 1;
         transform: scale3d(1
-
-
-/* Styles for mobile dropdown menu */
-.mobile-dropdown {
-    display: none; /* Hidden by default */
-    flex-direction: column; /* Stack buttons vertically */
-    position: absolute; /* Positioning */
-    background-color: #1f1f1f; /* Dropdown background */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px; /* Padding for dropdown items */
-    z-index: 10; /* Ensure it's above other content */
-}
-
-.mobile-dropdown.show {
-    display: flex; /* Show dropdown when active */
-}
-
-.dropdown-button {
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-/* Media query to hide desktop buttons and show dropdown on mobile */
-@media (max-width: 767px) {
-    .btn-container > div:not(.dropdown-button) {
-        display: none; /* Hide desktop buttons on mobile */
-    }
-    
-    .mobile-dropdown {
-        display: flex; /* Show dropdown on mobile */
-    }
-}
-
-/* Ensure the dropdown is hidden on desktop */
-@media (min-width: 768px) {
-    .mobile-dropdown {
-        display: none; /* Hide dropdown on desktop */
-    }
-}
