@@ -75,14 +75,14 @@ function loadContent(path) {
 
 
 
-function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show'); // Toggle the 'show' class
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    // This is just to confirm the script is loaded
-    console.log("DOM fully loaded and parsed");
+    const menu = document.getElementById('mobileMenu');
+
+    function toggleMenu() {
+        menu.classList.toggle('show'); // Toggle the 'show' class
+    }
+
+    document.querySelector('.hamburger').addEventListener('click', toggleMenu);
 });
 
 
