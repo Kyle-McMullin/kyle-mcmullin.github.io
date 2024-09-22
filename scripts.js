@@ -72,10 +72,25 @@ function loadContent(path) {
 }
 
 
-function toggleMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    mobileMenu.classList.toggle('show'); // Toggle the "show" class
-}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('show'); // Toggle visibility of mobile menu
+    }
+
+    // Attach the toggleMenu function to the hamburger menu
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+    }
+});
+
+
+
+
 
 
 	
