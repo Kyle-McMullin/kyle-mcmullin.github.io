@@ -325,3 +325,34 @@ a:hover {
     100% {
         opacity: 1;
         transform: scale3d(1
+
+
+/* Styles for mobile dropdown menu */
+.mobile-dropdown {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack buttons vertically */
+    position: absolute; /* Positioning */
+    background-color: #1f1f1f; /* Dropdown background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for dropdown items */
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.mobile-dropdown.show {
+    display: flex; /* Show dropdown when active */
+}
+
+.dropdown-button {
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Media query to hide desktop buttons and show dropdown on mobile */
+@media (max-width: 767px) {
+    .btn-container > div:not(.dropdown-button) {
+        display: none; /* Hide desktop buttons on mobile */
+    }
+
+    .mobile-dropdown {
+        display: flex; /* Show dropdown when active */
+    }
+}
