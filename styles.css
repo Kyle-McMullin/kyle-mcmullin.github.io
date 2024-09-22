@@ -334,7 +334,7 @@ a:hover {
     }
 
     .mobile-menu.show {
-        display: flex; /* Show dropdown when toggled */
+        display: flex !important;; /* Show dropdown when toggled */
     }
 	
 	.mobile-menu a {
