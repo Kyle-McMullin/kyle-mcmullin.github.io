@@ -307,13 +307,14 @@ a:hover {
     .hamburger {
         display: none; /* Hide the hamburger icon on desktop */
     }
+	
+	.mobile-menu {
+        display: none; /* Initially hidden */
+    }
 }
 
 /* Show the hamburger icon and hide buttons on mobile */
 @media (max-width: 767px) {
-    .btn-container {
-        display: none; /* Ensure buttons are hidden on mobile */
-    }
 
     .hamburger {
         display: block; /* Show the hamburger menu icon on mobile */
