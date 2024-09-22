@@ -229,7 +229,68 @@ a:hover::before {
 }
 
 
+/* Basic mobile styles */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #2dd9fe;
+}
 
+/* Hide navigation on mobile */
+#mainNav {
+    display: block;
+}
+
+/* Styles for mobile screens (up to 768px wide) */
+@media (max-width: 768px) {
+    /* Hide the nav by default on mobile */
+    #mainNav {
+        display: none;
+    }
+
+    /* Display the menu icon */
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* When menu is open, show the nav */
+    #mainNav.active {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    /* Ensure nav links are full width and look like a dropdown */
+    #mainNav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #mainNav ul li {
+        text-align: center;
+        padding: 15px 0;
+        background-color: #2dd9fe;
+        border-bottom: 1px solid #fff;
+    }
+
+    #mainNav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-container .btn {
+        width: 100%; /* Make the buttons full width on mobile */
+    }
+}
 
 
 
