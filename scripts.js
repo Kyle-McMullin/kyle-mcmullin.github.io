@@ -72,12 +72,12 @@ function loadContent(path) {
 }
 
     // Handle dropdown selection for mobile
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (mobileMenu) {
-        mobileMenu.addEventListener('change', function() {
-            const path = this.value;
-            loadContent(path);
-        });
+ const hamburgerMenu = document.getElementById('hamburgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburgerMenu.addEventListener('click', function() {
+    mobileMenu.classList.toggle('show');
+});
     }
 
 	
