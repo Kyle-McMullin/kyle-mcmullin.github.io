@@ -29,7 +29,7 @@
 	<nav>
       <div class="mobile-nav">
         <div class="dropdown">
-          <button class="dropbtn" onclick="toggleDropsown()">
+          <button class="dropbtn" onclick="toggleDropdown()">
             <div class="hamburger-icon">
               <span></span>
               <span></span>
@@ -130,15 +130,19 @@
 <script>
 function toggleDropdown() {
     const dropdown = document.getElementById("dropdownMenu");
-    // Toggle the 'show' class to open or close the dropdown
-    dropdown.classList.toggle("show");
+    dropdown.classList.toggle("show"); // Toggle the 'show' class
 }
 
 // Close the dropdown if clicked outside of it
 window.onclick = function(event) {
-    const dropdown = document.getElementById("dropdownMenu");
-    if (!event.target.matches('.dropbtn') && dropdown.classList.contains('show')) {
-        dropdown.classList.remove('show');
+    if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
 }
 </script>
