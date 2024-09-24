@@ -12,15 +12,38 @@
 <body>
     <header>
         <h1>Kyle McMullin</h1>
-        <nav>
-        <ul>
-	    <div class="btn-container">
-                <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/">Home</a></div></li>
-                <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/about">About</a></div></li>
-                <li><div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5"><a href="/contact">Contact</a></div></li>
-            </div>
-	</ul>
-        </nav>
+    
+      <div class="desktop-nav">
+        <div class="btn-container">
+          <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5">
+            <a href="/">Home</a>
+          </div>
+          <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5">
+            <a href="/about">About</a>
+          </div>
+          <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5">
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+      </div>
+	<nav>
+      <div class="mobile-nav">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <span class="hamburger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <div class="dropdown-content">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     </header>
     <main>
         <section class="centered-content">
@@ -99,5 +122,12 @@
             loadContent(window.location.pathname);
         });
     </script>
+	
+	
+	
+
+	
+	
+	
 </body>
 </html>
