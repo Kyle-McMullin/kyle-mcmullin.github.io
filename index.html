@@ -29,14 +29,14 @@
 	<nav>
       <div class="mobile-nav">
         <div class="dropdown">
-          <button class="dropbtn">
-            <span class="hamburger-icon">
+          <button class="dropbtn" onclick="toggleDropsown()">
+            <div class="hamburger-icon">
               <span></span>
               <span></span>
               <span></span>
-            </span>
+            </div>
           </button>
-          <div class="dropdown-content">
+          <div class="dropdown-content" id="dropdownMenu">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
@@ -124,7 +124,25 @@
     </script>
 	
 	
-	
+	<script>
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdownMenu");
+    dropdown.classList.toggle("show"); // Toggle the 'show' class
+}
+
+// Close the dropdown if clicked outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+</script>
 
 	
 	
