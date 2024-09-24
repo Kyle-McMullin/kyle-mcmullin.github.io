@@ -13,38 +13,44 @@
     <header>
         <h1>Kyle McMullin</h1>
     
-      <div class="desktop-nav">
-        <div class="btn-container">
-          <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5">
-            <a href="/">Home</a>
-          </div>
-          <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5">
-            <a href="/about">About</a>
-          </div>
-          <div class="btn" style="--clr: #2dd9fe; --clr-glow:#00a3d5">
-            <a href="/contact">Contact</a>
-          </div>
-        </div>
-      </div>
-	<nav>
-      <div class="mobile-nav">
-        <div class="dropdown">
-          <button class="dropbtn" onclick="toggleDropdown()">
-            <div class="hamburger-icon">
-              <span></span>
-              <span></span>
-              <span></span>
+	
+	
+
+
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-          </button>
-          <div class="dropdown-content" id="dropdownMenu">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+        </nav>
+ 
+		
+		
+		
+		
+		
     </header>
+	
+	
+	
+	
+	
+	
+	
+	
+	
     <main>
         <section class="centered-content">
             <img src="me.jpg" alt="Kyle McMullin" class="profile-pic">
@@ -124,25 +130,7 @@
     </script>
 	
 	
-
-
-
-<script>
-function toggleDropdown() {
-    const dropdown = document.getElementById("dropdownMenu");
-    // Toggle the 'show' class to open or close the dropdown
-    dropdown.classList.toggle("show");
-}
-
-// Close the dropdown if clicked outside of it
-window.onclick = function(event) {
-    const dropdown = document.getElementById("dropdownMenu");
-    if (!event.target.matches('.dropbtn') && dropdown.classList.contains('show')) {
-        dropdown.classList.remove('show');
-    }
-}
-</script>
-
+	
 	
 	
 	

@@ -39,8 +39,8 @@ function loadContent(path) {
     switch (path) {
         case '/':
             page = 'index.html';
-            title = 'Kyle McMullin';
-            headerText = 'Home';
+            title = 'Home - Kyle McMullin';
+            headerText = 'Kyle McMullin';
             break;
         case '/about':
             page = 'about.html';
@@ -70,6 +70,46 @@ function loadContent(path) {
             document.querySelector('h1').textContent = headerText;
         });
 }
+
+
+
+
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
