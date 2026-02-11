@@ -61,7 +61,7 @@ nav ul li a {
 .contactme-section {
     background: rgba(0, 0, 0, 0.7); /* Light transparent background color */
     border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Space inside the section */
+    padding: 50px; /* Space inside the section */
     margin: 20px; /* Space outside the section */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow to make the section stand out */
 }
@@ -559,3 +559,4 @@ a:hover {
     100% {
         opacity: 1;
         transform: scale3d(1
+
